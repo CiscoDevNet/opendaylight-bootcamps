@@ -1,7 +1,7 @@
 #SDN-Programatic Flow Management
 ###############################
 
-Team Members: Oleg Berzin, Michael Kowal, Yueping Zhang, Kevin Boutarel
+Team Members: Oleg Berzin, Kevin Boutarel, Michael Kowal, Yueping Zhang
 
 ## Goal of the Project  
 
@@ -26,16 +26,16 @@ However, the script returned a `400` or `500` return code so we were unable to s
 
 Another alternative is to connect manually to the router and set up the neighbor from there.  
 The following commands were used:  
-<code>ssh cisco@198.18.1.30  
-conf t  
-router bgp 65504  
-neighbor MY_IP_ADDRESS  
-remote-as 65504  
-update-source MgmtEth0/0/CPU0/0  
-address-family ipv4 unicast  
-route-reflector-client  
-commit  
-end</code>  
+`ssh cisco@198.18.1.30`    
+`conf t`  
+`router bgp 65504`  
+`neighbor MY_IP_ADDRESS`  
+`remote-as 65504`  
+`update-source MgmtEth0/0/CPU0/0`  
+`address-family ipv4 unicast`  
+`route-reflector-client`  
+`commit`  
+`end`    
 
 Everything is setup architecturaly for the scripts to run.  
 
