@@ -1,46 +1,46 @@
-SDN-Programatic Flow Management
+#SDN-Programatic Flow Management
 ###############################
 
 Team Members: Oleg Berzin, Michael Kowal, Yueping Zhang, Kevin Boutarel
 
-# Goal of the Project  
+## Goal of the Project  
 
 Demonstrating ODL capabilities for programatic control of flows in the network using BGP flowspec or BGP v4.
 
 
-# How to Use this Application  
+## How to Use this Application  
 
 Setup the Loc RIB with the IP address of the ODL controller (in our case `localhost`):  
-    python put-bgp-rib.py 127.0.0.1
+	python put-bgp-rib.py 127.0.0.1
 
 Setup the App RIB and the connection to the Loc RIB with 1) the IP address of the ODL controller and 2) the ID of the Loc RIB (IP address of the Controller):  
-    python put-app-rib.py 127.0.0.1 127.0.0.1
+	python put-app-rib.py 127.0.0.1 127.0.0.1
 
 Setup the BGP Peer with the router with 1) the IP address of the ODL controller and 2) the IP address of the router:  
-    python put-bgp-peer.py 127.0.0.1 198.18.1.30
+	python put-bgp-peer.py 127.0.0.1 198.18.1.30
 
 Setup the BGP Neighbor between the router and NETCONF witht the IP address of the ODL controller:  
-    python put-bgp-neighbor.py 127.0.0.1
+	python put-bgp-neighbor.py 127.0.0.1
 
 However, the script returned a `400` or `500` return code so we were unable to set it up automatically.  
 
 Another alternative is to connect manually to the router and set up the neighbor from there.  
 The following commands were used:  
-    ssh cisco@198.18.1.30
-    conf t
-    router bgp 65504
-    neighbor MY_IP_ADDRESS
-    remote-as 65504
-    update-source MgmtEth0/0/CPU0/0
-    address-family ipv4 unicast
-    route-reflector-client
-    commit
-    end  
+	ssh cisco@198.18.1.30
+	conf t
+	router bgp 65504
+	neighbor MY_IP_ADDRESS
+	remote-as 65504
+	update-source MgmtEth0/0/CPU0/0
+	address-family ipv4 unicast
+	route-reflector-client
+	commit
+	end  
 
 Everything is setup architecturaly for the scripts to run.  
 
 To monitor the traffic on the interface, simply run:  
-    python monitor.py
+	python monitor.py
 
 This will run continuously by getting the bytes sent to the client and finding the difference with the previous run.  
 The bytes are taken every 2 seconds.  
@@ -50,7 +50,7 @@ After MAX_NORMAL runs, the script will trigger `delete_route.py` which will dele
 This process is repeated infinitely.  
 
 
-# Future Goals
+## Future Goals
 
 This implementation ueses ipv4 unicast routes.  
 The original plan was to use flowspec but a bug on the router failed to accept flowspec routes due to community bugs.  
