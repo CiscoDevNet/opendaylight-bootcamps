@@ -4,9 +4,11 @@
 iPhone code repo: https://github.com/barrasso/Snow-Plow-ODL
 
 ###Components:
-- Arduino/Raspberry Pi
+- DMo
 
 - Google API web app
+
+- Mobile app
 
 - ODL data store (IoTDM) 
 
