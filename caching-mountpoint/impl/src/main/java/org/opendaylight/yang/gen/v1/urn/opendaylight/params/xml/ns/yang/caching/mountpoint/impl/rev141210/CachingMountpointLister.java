@@ -15,8 +15,12 @@ import org.opendaylight.controller.sal.core.api.mount.MountProvisionListener;
 import org.opendaylight.yangtools.yang.common.QName;
 import org.opendaylight.yangtools.yang.data.api.YangInstanceIdentifier;
 import org.opendaylight.yangtools.yang.model.api.SchemaContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class CachingMountpointLister implements MountProvisionListener {
+
+	private static final Logger LOG = LoggerFactory.getLogger(CachingMountpointLister.class);
 
     private DOMMountPointService service;
 
@@ -24,21 +28,36 @@ public class CachingMountpointLister implements MountProvisionListener {
         this.service = service;
     }
 
+
+
     @Override public void onMountPointCreated(final YangInstanceIdentifier yangInstanceIdentifier) {
+
+    	LOG.info("received onMountPointCreated event for id={}", yangInstanceIdentifier);
+
         final Optional<DOMMountPoint> mountPoint = service.getMountPoint(yangInstanceIdentifier);
         Preconditions.checkState(mountPoint.isPresent());
         final DOMMountPoint domMountPoint = mountPoint.get();
 
         final Optional<DOMDataBroker> dataBroker = domMountPoint.getService(DOMDataBroker.class);
+
+        if(dataBroker.isPresent() && dataBroker.get() instanceof CachingDOMDataBroker) {
+        	LOG.info("Ignoring CachingDOMDataBroker creation ...");
+        	return;
+        }
+
         final Optional<DOMRpcService> rpcService = domMountPoint.getService(DOMRpcService.class);
         final Optional<DOMNotificationService> notificationService = domMountPoint.getService(DOMNotificationService.class);
         final SchemaContext schemaContext = domMountPoint.getSchemaContext();
 
+        YangInstanceIdentifier yangid= addCachingSuffixToId(yangInstanceIdentifier);
+
         final DOMMountPointService.DOMMountPointBuilder cachingMountPointBuilder = service
-            .createMountPoint(addCachingSuffixToId(yangInstanceIdentifier));
+            .createMountPoint(yangid);
 
         cachingMountPointBuilder.addService(DOMRpcService.class, rpcService.get());
+        cachingMountPointBuilder.addInitialSchemaContext(schemaContext);
         cachingMountPointBuilder.addService(DOMNotificationService.class, notificationService.get());
+        LOG.info("creating CachingDOMDataBroker for yangInstanceIdentifier={} with new id={}", yangInstanceIdentifier, yangid);
         cachingMountPointBuilder.addService(DOMDataBroker.class, new CachingDOMDataBroker(dataBroker.get(), schemaContext));
 
         cachingMountPointBuilder.register();
@@ -50,8 +69,13 @@ public class CachingMountpointLister implements MountProvisionListener {
         final Map<QName, Object> keyValues = ((YangInstanceIdentifier.NodeIdentifierWithPredicates) lastPathArgument)
             .getKeyValues();
 
-        final QName idQName = QName.cachedReference(QName.create(lastPathArgument.getNodeType(), "node-id"));
-        final String mountPointName = ((String) keyValues.get(idQName));
+        //to do
+       //final QName idQName = QName.cachedReference(QName.create(lastPathArgument.getNodeType(), "node-id"));
+
+        final QName idQName = keyValues.keySet().iterator().next();
+        //final String mountPointName = ((String) keyValues.get(idQName));
+
+        final String mountPointName = ((String) keyValues.values().iterator().next());
 
         final String cachedNodeId = mountPointName + "-cached";
 
