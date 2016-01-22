@@ -1,0 +1,536 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0475E3A71BEAC752000406C3 /* MBAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475E3A61BEAC752000406C3 /* MBAnnotation.swift */; };
+		0475E3AA1BEBB773000406C3 /* plow-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0475E3A91BEBB773000406C3 /* plow-icon.png */; };
+		0475E3AC1BEBB9FF000406C3 /* MBSnowAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475E3AB1BEBB9FF000406C3 /* MBSnowAnnotation.swift */; };
+		0475E3AE1BEBBB2B000406C3 /* snow-marker-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0475E3AD1BEBBB2B000406C3 /* snow-marker-icon.png */; };
+		0489EA161BEA9C9900F9A9B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489EA151BEA9C9900F9A9B0 /* AppDelegate.swift */; };
+		0489EA181BEA9C9900F9A9B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489EA171BEA9C9900F9A9B0 /* ViewController.swift */; };
+		0489EA1B1BEA9C9900F9A9B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0489EA191BEA9C9900F9A9B0 /* Main.storyboard */; };
+		0489EA1D1BEA9C9900F9A9B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0489EA1C1BEA9C9900F9A9B0 /* Assets.xcassets */; };
+		0489EA201BEA9C9900F9A9B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0489EA1E1BEA9C9900F9A9B0 /* LaunchScreen.storyboard */; };
+		0489EA2B1BEA9C9900F9A9B0 /* SnowPlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489EA2A1BEA9C9900F9A9B0 /* SnowPlowTests.swift */; };
+		0489EA361BEA9C9900F9A9B0 /* SnowPlowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489EA351BEA9C9900F9A9B0 /* SnowPlowUITests.swift */; };
+		0489EA441BEAA62C00F9A9B0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489EA431BEAA62C00F9A9B0 /* MainViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0489EA271BEA9C9900F9A9B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0489EA0A1BEA9C9900F9A9B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0489EA111BEA9C9900F9A9B0;
+			remoteInfo = SnowPlow;
+		};
+		0489EA321BEA9C9900F9A9B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0489EA0A1BEA9C9900F9A9B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0489EA111BEA9C9900F9A9B0;
+			remoteInfo = SnowPlow;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0475E3A61BEAC752000406C3 /* MBAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBAnnotation.swift; sourceTree = "<group>"; };
+		0475E3A91BEBB773000406C3 /* plow-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plow-icon.png"; sourceTree = "<group>"; };
+		0475E3AB1BEBB9FF000406C3 /* MBSnowAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBSnowAnnotation.swift; sourceTree = "<group>"; };
+		0475E3AD1BEBBB2B000406C3 /* snow-marker-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snow-marker-icon.png"; sourceTree = "<group>"; };
+		0489EA121BEA9C9900F9A9B0 /* SnowPlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnowPlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0489EA151BEA9C9900F9A9B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0489EA171BEA9C9900F9A9B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0489EA1A1BEA9C9900F9A9B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0489EA1C1BEA9C9900F9A9B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0489EA1F1BEA9C9900F9A9B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0489EA211BEA9C9900F9A9B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0489EA261BEA9C9900F9A9B0 /* SnowPlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnowPlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0489EA2A1BEA9C9900F9A9B0 /* SnowPlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowPlowTests.swift; sourceTree = "<group>"; };
+		0489EA2C1BEA9C9900F9A9B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0489EA311BEA9C9900F9A9B0 /* SnowPlowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnowPlowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0489EA351BEA9C9900F9A9B0 /* SnowPlowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowPlowUITests.swift; sourceTree = "<group>"; };
+		0489EA371BEA9C9900F9A9B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0489EA431BEAA62C00F9A9B0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0489EA0F1BEA9C9900F9A9B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0489EA231BEA9C9900F9A9B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0489EA2E1BEA9C9900F9A9B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0475E3A81BEBB742000406C3 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0475E3A91BEBB773000406C3 /* plow-icon.png */,
+				0475E3AD1BEBBB2B000406C3 /* snow-marker-icon.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		0489EA091BEA9C9900F9A9B0 = {
+			isa = PBXGroup;
+			children = (
+				0489EA141BEA9C9900F9A9B0 /* SnowPlow */,
+				0489EA291BEA9C9900F9A9B0 /* SnowPlowTests */,
+				0489EA341BEA9C9900F9A9B0 /* SnowPlowUITests */,
+				0489EA131BEA9C9900F9A9B0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0489EA131BEA9C9900F9A9B0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0489EA121BEA9C9900F9A9B0 /* SnowPlow.app */,
+				0489EA261BEA9C9900F9A9B0 /* SnowPlowTests.xctest */,
+				0489EA311BEA9C9900F9A9B0 /* SnowPlowUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0489EA141BEA9C9900F9A9B0 /* SnowPlow */ = {
+			isa = PBXGroup;
+			children = (
+				0489EA151BEA9C9900F9A9B0 /* AppDelegate.swift */,
+				0489EA171BEA9C9900F9A9B0 /* ViewController.swift */,
+				0489EA431BEAA62C00F9A9B0 /* MainViewController.swift */,
+				0489EA191BEA9C9900F9A9B0 /* Main.storyboard */,
+				0489EA1C1BEA9C9900F9A9B0 /* Assets.xcassets */,
+				0489EA1E1BEA9C9900F9A9B0 /* LaunchScreen.storyboard */,
+				0489EA211BEA9C9900F9A9B0 /* Info.plist */,
+				0475E3A61BEAC752000406C3 /* MBAnnotation.swift */,
+				0475E3AB1BEBB9FF000406C3 /* MBSnowAnnotation.swift */,
+				0475E3A81BEBB742000406C3 /* Images */,
+			);
+			path = SnowPlow;
+			sourceTree = "<group>";
+		};
+		0489EA291BEA9C9900F9A9B0 /* SnowPlowTests */ = {
+			isa = PBXGroup;
+			children = (
+				0489EA2A1BEA9C9900F9A9B0 /* SnowPlowTests.swift */,
+				0489EA2C1BEA9C9900F9A9B0 /* Info.plist */,
+			);
+			path = SnowPlowTests;
+			sourceTree = "<group>";
+		};
+		0489EA341BEA9C9900F9A9B0 /* SnowPlowUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0489EA351BEA9C9900F9A9B0 /* SnowPlowUITests.swift */,
+				0489EA371BEA9C9900F9A9B0 /* Info.plist */,
+			);
+			path = SnowPlowUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0489EA111BEA9C9900F9A9B0 /* SnowPlow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0489EA3A1BEA9C9900F9A9B0 /* Build configuration list for PBXNativeTarget "SnowPlow" */;
+			buildPhases = (
+				0489EA0E1BEA9C9900F9A9B0 /* Sources */,
+				0489EA0F1BEA9C9900F9A9B0 /* Frameworks */,
+				0489EA101BEA9C9900F9A9B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SnowPlow;
+			productName = SnowPlow;
+			productReference = 0489EA121BEA9C9900F9A9B0 /* SnowPlow.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0489EA251BEA9C9900F9A9B0 /* SnowPlowTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0489EA3D1BEA9C9900F9A9B0 /* Build configuration list for PBXNativeTarget "SnowPlowTests" */;
+			buildPhases = (
+				0489EA221BEA9C9900F9A9B0 /* Sources */,
+				0489EA231BEA9C9900F9A9B0 /* Frameworks */,
+				0489EA241BEA9C9900F9A9B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0489EA281BEA9C9900F9A9B0 /* PBXTargetDependency */,
+			);
+			name = SnowPlowTests;
+			productName = SnowPlowTests;
+			productReference = 0489EA261BEA9C9900F9A9B0 /* SnowPlowTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0489EA301BEA9C9900F9A9B0 /* SnowPlowUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0489EA401BEA9C9900F9A9B0 /* Build configuration list for PBXNativeTarget "SnowPlowUITests" */;
+			buildPhases = (
+				0489EA2D1BEA9C9900F9A9B0 /* Sources */,
+				0489EA2E1BEA9C9900F9A9B0 /* Frameworks */,
+				0489EA2F1BEA9C9900F9A9B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0489EA331BEA9C9900F9A9B0 /* PBXTargetDependency */,
+			);
+			name = SnowPlowUITests;
+			productName = SnowPlowUITests;
+			productReference = 0489EA311BEA9C9900F9A9B0 /* SnowPlowUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0489EA0A1BEA9C9900F9A9B0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = MEB;
+				TargetAttributes = {
+					0489EA111BEA9C9900F9A9B0 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					0489EA251BEA9C9900F9A9B0 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 0489EA111BEA9C9900F9A9B0;
+					};
+					0489EA301BEA9C9900F9A9B0 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 0489EA111BEA9C9900F9A9B0;
+					};
+				};
+			};
+			buildConfigurationList = 0489EA0D1BEA9C9900F9A9B0 /* Build configuration list for PBXProject "SnowPlow" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0489EA091BEA9C9900F9A9B0;
+			productRefGroup = 0489EA131BEA9C9900F9A9B0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0489EA111BEA9C9900F9A9B0 /* SnowPlow */,
+				0489EA251BEA9C9900F9A9B0 /* SnowPlowTests */,
+				0489EA301BEA9C9900F9A9B0 /* SnowPlowUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0489EA101BEA9C9900F9A9B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0475E3AA1BEBB773000406C3 /* plow-icon.png in Resources */,
+				0489EA201BEA9C9900F9A9B0 /* LaunchScreen.storyboard in Resources */,
+				0475E3AE1BEBBB2B000406C3 /* snow-marker-icon.png in Resources */,
+				0489EA1D1BEA9C9900F9A9B0 /* Assets.xcassets in Resources */,
+				0489EA1B1BEA9C9900F9A9B0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0489EA241BEA9C9900F9A9B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0489EA2F1BEA9C9900F9A9B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0489EA0E1BEA9C9900F9A9B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0489EA441BEAA62C00F9A9B0 /* MainViewController.swift in Sources */,
+				0475E3AC1BEBB9FF000406C3 /* MBSnowAnnotation.swift in Sources */,
+				0489EA181BEA9C9900F9A9B0 /* ViewController.swift in Sources */,
+				0489EA161BEA9C9900F9A9B0 /* AppDelegate.swift in Sources */,
+				0475E3A71BEAC752000406C3 /* MBAnnotation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0489EA221BEA9C9900F9A9B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0489EA2B1BEA9C9900F9A9B0 /* SnowPlowTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0489EA2D1BEA9C9900F9A9B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0489EA361BEA9C9900F9A9B0 /* SnowPlowUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0489EA281BEA9C9900F9A9B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0489EA111BEA9C9900F9A9B0 /* SnowPlow */;
+			targetProxy = 0489EA271BEA9C9900F9A9B0 /* PBXContainerItemProxy */;
+		};
+		0489EA331BEA9C9900F9A9B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0489EA111BEA9C9900F9A9B0 /* SnowPlow */;
+			targetProxy = 0489EA321BEA9C9900F9A9B0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0489EA191BEA9C9900F9A9B0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0489EA1A1BEA9C9900F9A9B0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0489EA1E1BEA9C9900F9A9B0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0489EA1F1BEA9C9900F9A9B0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0489EA381BEA9C9900F9A9B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0489EA391BEA9C9900F9A9B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0489EA3B1BEA9C9900F9A9B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SnowPlow/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.meb.SnowPlow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0489EA3C1BEA9C9900F9A9B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SnowPlow/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.meb.SnowPlow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		0489EA3E1BEA9C9900F9A9B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SnowPlowTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.meb.SnowPlowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SnowPlow.app/SnowPlow";
+			};
+			name = Debug;
+		};
+		0489EA3F1BEA9C9900F9A9B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SnowPlowTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.meb.SnowPlowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SnowPlow.app/SnowPlow";
+			};
+			name = Release;
+		};
+		0489EA411BEA9C9900F9A9B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SnowPlowUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.meb.SnowPlowUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SnowPlow;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		0489EA421BEA9C9900F9A9B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SnowPlowUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.meb.SnowPlowUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SnowPlow;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0489EA0D1BEA9C9900F9A9B0 /* Build configuration list for PBXProject "SnowPlow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0489EA381BEA9C9900F9A9B0 /* Debug */,
+				0489EA391BEA9C9900F9A9B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0489EA3A1BEA9C9900F9A9B0 /* Build configuration list for PBXNativeTarget "SnowPlow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0489EA3B1BEA9C9900F9A9B0 /* Debug */,
+				0489EA3C1BEA9C9900F9A9B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0489EA3D1BEA9C9900F9A9B0 /* Build configuration list for PBXNativeTarget "SnowPlowTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0489EA3E1BEA9C9900F9A9B0 /* Debug */,
+				0489EA3F1BEA9C9900F9A9B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0489EA401BEA9C9900F9A9B0 /* Build configuration list for PBXNativeTarget "SnowPlowUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0489EA411BEA9C9900F9A9B0 /* Debug */,
+				0489EA421BEA9C9900F9A9B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0489EA0A1BEA9C9900F9A9B0 /* Project object */;
+}
