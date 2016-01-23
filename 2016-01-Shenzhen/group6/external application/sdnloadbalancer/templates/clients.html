@@ -1,0 +1,65 @@
+{% extends "index.html" %}
+{% block content %}
+<p>.</p>
+    <div class="page-header">
+<h4>Config the mac address and ip address of clients</h4>
+    </div>
+
+        <div class="page-header">
+
+        <form  action="/clients" method="post" role = "form" onsubmit="return guangshuai_check()">
+
+<div class="row">
+  <div class="col-lg-4">
+   <div class = "form-group">
+    <label for="exampleInputEmail1">ip address</label>
+      <input class = "form-control" type = "text" id="ipaddress" name="ipaddress" placeholder = "目标IP" autocomplete="off">
+   </div>
+
+</div>
+
+     <div class="col-lg-4">
+        <label for="exampleInputEmail1">mac address</label>
+
+ <div class="input-group" >
+            <input class = "form-control" type = "text" id="mac" name="mac" placeholder = "目标IP" autocomplete="off">
+
+           <span class="input-group-btn">
+        <button class="btn btn-default" type="submit">Submit!</button>
+      </span>
+</div>
+  </div>
+
+</div>
+
+</form>
+
+        </div>
+    <table class="table table-bordered" id="guangshuai_table">
+                        <thead>
+                                <th>client's ip address</th>
+                                <th>client's server's mac address</th>
+                                <th></th>
+
+    </thead>
+    <tbody>
+    {% for cs in clients %}
+        <tr>
+        <td>
+            {{ cs.ipaddr }}
+        </td>
+        <td>
+            {{ cs.macaddr }}
+        </td>
+        <td>
+                <a href="/delclient/{{ cs.id }}" data-toggle="modal">
+                            <i class="fa fa-trash"></i>
+                </a>
+        </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+
+
+{% endblock %}

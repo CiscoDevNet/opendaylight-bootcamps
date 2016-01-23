@@ -1,0 +1,81 @@
+{% extends "index.html" %}
+{% block content %}
+<p>.</p>
+    <div class="page-header">
+<h4>Config the mac address and ip address of backend servers</h4>
+    </div>
+
+
+
+        <div class="page-header">
+
+        <form  action="/backends" method="post" role = "form" onsubmit="return guangshuai_check()">
+
+<div class="row">
+  <div class="col-lg-4">
+   <div class = "form-group">
+    <label for="exampleInputEmail1">ip address</label>
+      <input class = "form-control" type = "text" id="ipaddress" name="ipaddress" placeholder = "" autocomplete="off">
+   </div>
+
+</div>
+
+    <div class="col-lg-4">
+        <div class = "form-group">
+    <label for="exampleInputEmail1">ofport</label>
+      <input class = "form-control" type = "text" id="ofport" name="ofport" placeholder = "port on the switch" autocomplete="off">
+   </div>
+</div>
+
+
+
+     <div class="col-lg-4">
+        <label for="exampleInputEmail1">mac address</label>
+
+ <div class="input-group" >
+            <input class = "form-control" type = "text" id="mac" name="mac" placeholder = "" autocomplete="off">
+
+           <span class="input-group-btn">
+        <button class="btn btn-default" type="submit">Submit!</button>
+      </span>
+</div>
+  </div>
+
+</div>
+
+</form>
+
+        </div>
+    <table class="table table-bordered" id="guangshuai_table">
+                        <thead>
+                                <th>backend server's ip address</th>
+                                <th>backend server's mac address</th>
+                                <th>backend server's switch port</th>
+
+                                <th></th>
+
+    </thead>
+    <tbody>
+    {% for bs in backends %}
+        <tr>
+        <td>
+            {{ bs.ipaddr }}
+        </td>
+        <td>
+            {{ bs.macaddr }}
+        </td>
+                    <td>
+            {{ bs.ofport }}
+        </td>
+        <td>
+                <a href="/delbackendserver/{{ bs.id }}" data-toggle="modal">
+                            <i class="fa fa-trash"></i>
+                </a>
+        </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+
+
+{% endblock %}
