@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- vi: set et smarttab sw=4 tabstop=4: -->
+<!--
+team 2
+
+This program and the accompanying materials are made available under the
+terms of the Eclipse Public License v1.0 which accompanies this distribution,
+and is available at http://www.eclipse.org/legal/epl-v10.html
+-->
+<features name="odl-aaas-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.2.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.2.0 http://karaf.apache.org/xmlns/features/v1.2.0">
+  <repository>mvn:org.opendaylight.yangtools/features-yangtools/${yangtools.version}/xml/features</repository>
+  <repository>mvn:org.opendaylight.controller/features-mdsal/${mdsal.version}/xml/features</repository>
+  <repository>mvn:org.opendaylight.controller/features-restconf/${mdsal.version}/xml/features</repository>
+  <repository>mvn:org.opendaylight.controller/features-netconf-connector/${mdsal.version}/xml/features</repository>
+  <repository>mvn:org.opendaylight.dlux/features-dlux/${dlux.version}/xml/features</repository>
+  <repository>mvn:org.opendaylight.bgpcep/features-bgp/${feature.bgpcep.version}/xml/features</repository>
+  
+  <feature name='odl-aaas-api' version='${project.version}' description='OpenDaylight :: aaas :: api'>
+    <feature version='${yangtools.version}'>odl-yangtools-models</feature>
+    <bundle>mvn:aaas/aaas-api/${project.version}</bundle>
+  </feature>
+  
+  <feature name='odl-aaas' version='${project.version}' description='OpenDaylight :: aaas'>
+    <feature version='${mdsal.version}'>odl-mdsal-broker</feature>
+    <feature version='${project.version}'>odl-aaas-api</feature>
+    <feature version='${feature.bgpcep.version}'>odl-bgpcep-bgp-all</feature>
+    <feature version='${mdsal.version}'>odl-netconf-mdsal</feature>
+    <feature version='${mdsal.version}'>odl-netconf-connector-all</feature>
+    <bundle>mvn:aaas/aaas-impl/${project.version}</bundle>
+    <configfile finalname="${configfile.directory}/aaas.xml">mvn:aaas/aaas-impl/${project.version}/xml/config</configfile>
+  </feature>
+  
+  <feature name='odl-aaas-rest' version='${project.version}' description='OpenDaylight :: aaas :: REST'>
+    <feature version="${project.version}">odl-aaas</feature>
+    <feature version="${mdsal.version}">odl-restconf</feature>
+  </feature>
+  <feature name='odl-aaas-ui' version='${project.version}' description='OpenDaylight :: aaas :: UI'>
+    <feature version="${project.version}">odl-aaas-rest</feature>
+    <feature version="${mdsal.version}">odl-mdsal-apidocs</feature>
+    <feature version="${mdsal.version}">odl-mdsal-xsql</feature>
+  </feature>
+
+</features>
