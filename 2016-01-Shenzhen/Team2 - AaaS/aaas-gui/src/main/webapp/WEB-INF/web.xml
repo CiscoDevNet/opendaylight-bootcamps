@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>daas-app</display-name>  
+  <servlet>
+    <description></description>
+    <servlet-name>DaasServlet</servlet-name>
+    <servlet-class>cn.odl.daaas.app.topodemo.DaasServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DaasServlet</servlet-name>
+    <url-pattern>/daas</url-pattern>
+  </servlet-mapping>  
+  <servlet>
+    <description></description>
+    <servlet-name>DaasOpeServlet</servlet-name>
+    <servlet-class>cn.odl.daaas.app.topodemo.DaasOpeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DaasOpeServlet</servlet-name>
+    <url-pattern>/daasmod/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <servlet-name>RouterQryServlet</servlet-name>
+    <servlet-class>cn.odl.daaas.app.topodemo.RouterQryServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RouterQryServlet</servlet-name>
+    <url-pattern>/daasqry</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>topodemo.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

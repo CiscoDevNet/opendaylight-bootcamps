@@ -1,0 +1,70 @@
+module aaas {
+    yang-version 1;
+    namespace "urn:opendaylight:params:xml:ns:yang:aaas";
+    prefix "aaas";
+    
+    import ietf-yang-types { prefix yang; revision-date 2013-07-15;}
+    import ietf-inet-types { prefix inet; revision-date 2013-07-15;}
+
+    organization "Team NO.2 of 2nd ODL-BootCamp China";
+
+    contact 
+    	"Peng Zhang: 64264368@qq.com,
+    	 Hongli Zhou: 1879131857@qq.com,
+    	 Wenyao Huang: 89289709@qq.com.";
+
+    description "Yang model of ACL as a Service (Aaas)";
+
+    revision "2016-01-21" {
+        description "Initial revision of aaas model";
+    }
+    container acl-entries {
+    	list acl-entry {
+    		key "entry-uuid";
+    		leaf entry-uuid {
+    			type string;
+    			description "Uuid of the ACL entry.";
+    		}		
+			container source-network {
+			    leaf source-ip {
+			        type string;
+			        description "Source IP address to match.";
+			    }
+			    leaf source-netmask {
+			    	type string;
+			      	description "Source netmask to match.";
+			    }
+			 }
+			 leaf source-port {
+				 type uint32 {
+				    range "0..65535";
+				 }
+			     description "Source port to match.";
+			 }
+			 container destination-network {
+			     leaf destination-ip {
+			       type string;
+			       description "Destination IP address to match.";
+			     }
+			     leaf destination-netmask {
+			    	type string;
+			       	description "Source netmask to match.";
+			     }
+			 }
+			 leaf destination-port {
+				type uint32 {
+				   range "0..65535";
+				}
+				description "Destination port to match.";
+			 }
+			 leaf protocol {
+				 type string;
+				 description "Protocols to match, only TCP and UDP supported.";
+			 }
+			 leaf action {
+				 type string;
+				 description "Actions when match, only Permit | Deny supported.";
+			 }
+    	}
+    }
+}
