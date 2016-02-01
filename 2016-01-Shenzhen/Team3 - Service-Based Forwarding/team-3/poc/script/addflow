@@ -1,0 +1,36 @@
+#ovs-ofctl del-flows s1
+#ovs-ofctl del-flows s2
+#ovs-ofctl del-flows s3
+#ovs-ofctl del-flows s4
+
+#h1-->h3
+ovs-ofctl add-flow s1 "table=0,priority=100,tcp,nw_dst=10.0.0.3,tp_dst=80,actions=output:1"
+ovs-ofctl add-flow s2 "table=0,priority=100,tcp,nw_dst=10.0.0.3,tp_dst=80,actions=output:2"
+ovs-ofctl add-flow s4 "table=0,priority=100,tcp,nw_dst=10.0.0.3,tp_dst=80,actions=output:3"
+ovs-ofctl add-flow s5 "table=0,priority=100,tcp,nw_dst=10.0.0.3,tp_dst=80,actions=output:2"
+ovs-ofctl add-flow s6 "table=0,priority=100,tcp,nw_dst=10.0.0.3,tp_dst=80,actions=output:3"
+ovs-ofctl add-flow s8 "table=0,priority=100,tcp,nw_dst=10.0.0.3,tp_dst=80,actions=output:3"
+
+#h3-->h1
+ovs-ofctl add-flow s8 "table=0,priority=100,tcp,nw_src=10.0.0.3,tp_src=80,actions=output:1"
+ovs-ofctl add-flow s6 "table=0,priority=100,tcp,nw_src=10.0.0.3,tp_src=80,actions=output:1"
+ovs-ofctl add-flow s5 "table=0,priority=100,tcp,nw_src=10.0.0.3,tp_src=80,actions=output:1"
+ovs-ofctl add-flow s4 "table=0,priority=100,tcp,nw_src=10.0.0.3,tp_src=80,actions=output:1"
+ovs-ofctl add-flow s2 "table=0,priority=100,tcp,nw_src=10.0.0.3,tp_src=80,actions=output:1"
+ovs-ofctl add-flow s1 "table=0,priority=100,tcp,nw_src=10.0.0.3,tp_src=80,actions=output:3"
+
+
+
+#h2-->h4
+ovs-ofctl add-flow s1 "table=0,priority=100,tcp,nw_dst=10.0.0.4,tp_dst=8080,actions=output:2"
+ovs-ofctl add-flow s3 "table=0,priority=100,tcp,nw_dst=10.0.0.4,tp_dst=8080,actions=output:2"
+ovs-ofctl add-flow s4 "table=0,priority=100,tcp,nw_dst=10.0.0.4,tp_dst=8080,actions=output:4"
+ovs-ofctl add-flow s7 "table=0,priority=100,tcp,nw_dst=10.0.0.4,tp_dst=8080,actions=output:3"
+ovs-ofctl add-flow s8 "table=0,priority=100,tcp,nw_dst=10.0.0.4,tp_dst=8080,actions=output:4"
+
+#h4-->h2
+ovs-ofctl add-flow s8 "table=0,priority=100,tcp,nw_src=10.0.0.4,tp_src=8080,actions=output:2"
+ovs-ofctl add-flow s7 "table=0,priority=100,tcp,nw_src=10.0.0.4,tp_src=8080,actions=output:1"
+ovs-ofctl add-flow s4 "table=0,priority=100,tcp,nw_src=10.0.0.4,tp_src=8080,actions=output:2"
+ovs-ofctl add-flow s3 "table=0,priority=100,tcp,nw_src=10.0.0.4,tp_src=8080,actions=output:1"
+ovs-ofctl add-flow s1 "table=0,priority=100,tcp,nw_src=10.0.0.4,tp_src=8080,actions=output:4"
