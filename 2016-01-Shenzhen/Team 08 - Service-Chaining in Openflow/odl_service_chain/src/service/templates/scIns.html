@@ -1,0 +1,19 @@
+<h1><center>Service_chain_Instance</center></h1>  
+{% extends "base.html" %}  
+{% block scIns %}  
+<table >
+	<tr> <td>SCInstanceID</td>  <td>SCSTemplateID</td> <td>Protocol</td> <td>Port</td></tr> 
+	{% for scIns in scInss %} 
+	<tr> <td>{{ scIns.instid }}</td>  <td>{{ scIns.tpltID }}</td> <td>{{ scIns.proto }}</td> <td>{{ scIns.port }}</td> </tr> 
+	{% endfor %}  
+</table>
+
+<h2>
+	<form action="/addins" method="post">
+      SC Instance ID<br><input name="scInsID" type="text" value="" ><br/>
+      SC Template ID<br><input name="scTemID" type="text" ><br/>
+      Protocol <br> <input name="protocol" type="text" ><br/>
+      Port <br> <input name="port" type="text" >&nbsp;&nbsp;&nbsp;<input type="submit" value="submit" ><br/>
+	</form>
+</h2>
+{% endblock %}

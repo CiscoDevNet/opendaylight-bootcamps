@@ -1,0 +1,17 @@
+<h1><center>Service_chain_Binding</center></h1>  
+{% extends "base.html" %}  
+{% block scBinding %}  
+<table >
+	<tr> <td>NodeID</td>  <td>ServiceChainID</td> </tr> 
+	{% for bind in binds %} 
+	<tr> <td>{{ bind.nodeId }}</td>  <td>{{ bind.scInstanceId }}</td> </tr> 
+	{% endfor %}  
+</table>
+
+<h2>
+	<form action="/addbind" method="post">
+      NodeID<br> <input name="NodeID" type="text" value="" ><br/>
+      SC ID <br> <input name="scID" type="text" >&nbsp;&nbsp;&nbsp;<input type="submit" value="submit" ><br/>
+	</form>
+</h2>
+{% endblock %}

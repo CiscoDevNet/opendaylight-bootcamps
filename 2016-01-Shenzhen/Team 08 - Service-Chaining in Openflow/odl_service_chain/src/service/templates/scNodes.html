@@ -1,0 +1,19 @@
+<h1><center>NodeTable</center></h1> 
+{% extends "base.html" %}  
+{% block NodeTable %}  
+<h2>
+<table ><tr> <td>NodeID</td>  <td>NodeName</td> <td>NodeType</td> <td>Mac Address</td></tr> 
+{% for node in nodes %} 
+<tr> <td>{{ node.nodeid }}</td>  <td>{{ node.name }}</td> <td>{{ node.type }}</td> <td>{{ node.mac }}</td> 
+<td>
+	<form action="/updateType" method="post">
+		<input type="hidden" name="NodeID" value={{ node.nodeid }}>
+		<input name="type" type="text" >
+		<input type="submit" value="Modify" ><br/>
+	</form>
+</td></tr> 
+{% endfor %}  
+</table>
+
+</h2>
+{% endblock %}

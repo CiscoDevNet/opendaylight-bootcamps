@@ -1,0 +1,17 @@
+<h1><center>Service_chain_Template</center></h1>  
+{% extends "base.html" %}  
+{% block scTem %}  
+<table >
+	<tr><td>SC Template ID</td>  <td>SC Template Name</td> <td>SC Template Pipe</td></tr> 
+	{% for sctmp in sctmps %} 
+	<tr> <td>{{ sctmp.tpltid }}</td>  <td>{{ sctmp.name }}</td> <td>{{ sctmp.pipe }}</td> </tr> 
+	{% endfor %}  
+</table>
+<h2>
+	<form action="/addtmp" method="post">
+      SC Template ID <br> <input name="id" type="text" value="" ><br/>
+      SC Template name <br> <input name="name" type="text" ><br/>
+      SC Template pipe <br> <input name="pipe" type="text" >&nbsp;&nbsp;&nbsp;<input type="submit" value="submit" ><br/>
+	</form>
+</h2>
+{% endblock %}
