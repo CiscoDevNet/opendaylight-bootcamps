@@ -1,0 +1,141 @@
+module kafka-agent {
+    
+    yang-version 1;
+    
+    namespace "urn:opendaylight:params:xml:ns:yang:kafka-agent";
+    
+    prefix "kafka-agent";
+
+    organization "Cisco Inc.";
+ 
+    contact "Xiaoyu Chen <williscc@cisco.com>";
+
+    description "PaNDA Kafka user agent";
+
+    revision "2015-09-22" {
+        description "Initial revision of kafka-agent model";
+    }
+
+    //This section is the top-level configuration that defines target PaNDA kafka properties. 
+    container kafka-producer-config {
+        
+        leaf metadata-broker-list {
+            type string;
+            config true;
+            mandatory true;
+            description
+                "The bootstrapping used by the agent for getting metadata (topics, partitions, and replicas).";
+        }
+        
+        leaf producer-type{
+             type enumeration {
+                enum "sync" {
+                    value 0;
+                    description "";
+                }
+                enum "async" {
+                    value 1;
+                    description "";
+                }
+            }
+            config true;
+            mandatory true;
+        }
+
+        leaf compression-codec {
+            type enumeration {
+                enum "none" {
+                    value 0;
+                    description "";
+                }
+                enum "gzip" {
+                    value 1;
+                    description "";
+                }
+                enum "snappy" {
+                    value 2;
+                    description "";
+                }
+            }
+            config true;
+            mandatory true;
+        }
+        
+        leaf topic {
+            type string;
+            config true;
+            mandatory true;
+        }
+
+        leaf message-serialization {
+            type enumeration {
+                enum "raw" {
+                    value 0;
+                    description "";
+                }
+                enum "avro" {
+                    value 1;
+                    description "";
+                }
+            }
+            description "if raw is set, the data";
+            config true;
+            mandatory true;
+        }
+
+        
+        
+
+        leaf dp-message-source-xpath {
+            type string;
+            description "set xpath statement to extract message source message payload";
+            config true;
+            mandatory true;
+        }
+        
+        leaf dp-message-host-ip-xpath {
+            type string;
+            description "if this parameter is not set, runtime host ip is set as default by runtime.";
+            config true;
+            mandatory false;
+            
+        }
+        
+        leaf dp-timestamp-xpath {
+            type string;
+            description "if it is not set, runtime timestamp will be used.";
+            config true;
+            mandatory false;
+        }
+        
+        leaf avro-schema {
+            type string;
+            description "by default PaNDA avro schema is used.";
+            config true;
+            mandatory false;
+        }
+    
+        leaf default-message-source {
+            type string;
+            description "set default message source that would apply to all ETB messages";
+            config true;
+            mandatory false;
+        }
+
+        leaf default-host-ip {
+            type string;
+            config true;
+            mandatory false;
+        }
+
+        
+        leaf event-subscriptions{
+            type string;
+            config true;
+            description "ODL event topic filter; if not set, all topics are valid";
+            mandatory false;
+        }
+
+        
+    }//Container
+}
