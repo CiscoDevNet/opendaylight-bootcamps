@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>odl-sal-netconf-connector-cfg</title>
+  </head>
+  <body>
+    <h1>odl-sal-netconf-connector-cfg</h1>
+    
+    <h2>Base Information</h2>
+    <table>
+        <tr>
+            <td><strong>prefix</strong></td>
+            <td>sal-netconf</td>
+        </tr>
+        <tr>
+            <td><strong>namespace</strong></td>
+            <td>urn:opendaylight:params:xml:ns:yang:controller:md:sal:connector:netconf</td>
+        </tr>
+        <tr>
+            <td><strong>revision</strong></td>
+            <td>2013-10-28</td>
+        </tr>
+        <tr>
+            <td><strong>description</strong></td>
+            <td>Service definition for Binding Aware MD-SAL.</td>
+        </tr>
+        <tr>
+            <td><strong>yang-version</strong></td>
+            <td>1</td>
+        </tr>
+        <tr>
+    <td><strong>imports</strong></td><td>        dom:opendaylight-md-sal-dom;
+            th:threadpool;
+            inet:ietf-inet-types 2010-09-24;
+            md-sal-binding:opendaylight-md-sal-binding 2013-10-28;
+            cfg-net:odl-netconf-cfg 2014-04-08;
+            config:config 2013-04-05;
+            netty:netty;
+    </td>    </tr>
+    </table>
+    
+    <h3>Identities Summary</h3>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>
+            <a href="#sal-netconf-connector"><strong>sal-netconf-connector</strong></a>
+            </td>
+            <td>
+            </td>
+        </tr>
+    </table>
+    <h3>Groupings Summary</h3>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>
+            <a href="#server"><strong>server</strong></a>
+            </td>
+            <td>
+            </td>
+        </tr>
+    </table>
+    <h3>Augmentations Summary</h3>
+    <table>
+        <tr>
+            <th>Target</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>
+            <a href="#/config:modules/config:module/config:configuration/(case)sal-netconf-connector"><strong>/config:modules/config:module/config:configuration/(case)sal-netconf-connector</strong></a>
+            </td>
+            <td>
+            </td>
+        </tr>
+    </table>
+    
+    
+    <h2>Identities</h2>
+    <ul>
+    <li>
+        <h3 id="sal-netconf-connector">sal-netconf-connector</h3>
+        <ul>
+        <li>
+            base: module-type
+        </li>
+        </ul>
+    </li>
+    </ul>
+    
+    <h2>Groupings</h2>
+    <ul>
+    <li>
+        <h3 id="server">server</h3>
+        <ul>
+            <ul>
+            <strong><li>
+                leaf: address
+            </li>
+            </strong>
+            <ul>
+            <li>
+                type: (urn:ietf:params:xml:ns:yang:1)string
+            </li>
+            </ul>
+            </ul>
+            <ul>
+            <strong><li>
+                leaf: port
+            </li>
+            </strong>
+            <ul>
+            <li>
+                type: (urn:ietf:params:xml:ns:yang:1)uint32
+            </li>
+            </ul>
+            </ul>
+        </ul>
+    </li>
+    </ul>
+    
+    
+    
+    
+    <h2>Augmentations</h2>
+    
+    <ul>
+    <li>
+        <h3 id="/config:modules/config:module/config:configuration/(case)sal-netconf-connector">
+        Target [(urn:opendaylight:params:xml:ns:yang:controller:config)/config:modules/config:module/config:configuration/(case)sal-netconf-connector]</h3>
+            Status: <strong>CURRENT</strong>
+        <ul>
+        <strong>
+        <li id="modules/module/configuration/sal-netconf-connector">
+            case: sal-netconf-connector
+        </li>
+        </strong>
+        <ul>
+        <li>
+            when condition: /config:modules/config:module/config:type = 'sal-netconf-connector'
+        </li>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        <ul>
+        <strong><li>
+            leaf: address
+        </li>
+        </strong>
+        <ul>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:ietf-inet-types)host
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        <strong><li>
+            leaf: port
+        </li>
+        </strong>
+        <ul>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:ietf-inet-types)port-number
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        <strong><li>
+            leaf: tcp-only
+        </li>
+        </strong>
+        <ul>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:1)boolean
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        <strong><li>
+            leaf: username
+        </li>
+        </strong>
+        <ul>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:1)string
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        <strong><li>
+            leaf: password
+        </li>
+        </strong>
+        <ul>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:1)string
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        <strong>
+        <li id="modules/module/configuration/sal-netconf-connector/yang-module-capabilities">
+            container: yang-module-capabilities
+        </li>
+        </strong>
+        <ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        <ul>
+        <strong><li>
+            leaf-list: capability
+        </li>
+        </strong>
+        <ul>
+        <li>
+            description: Set a list of capabilities to override capabilities provided in device's hello message.
+                                             Can be used for devices that do not report any yang modules in their hello message
+        </li>
+        <li>
+            type: string
+        </li>
+        </ul>
+        </ul>
+        </ul>
+        </ul>
+        <ul>
+        <strong><li>
+            leaf: reconnect-on-changed-schema
+        </li>
+        </strong>
+        <ul>
+        <li>
+            description: If true, the connector would auto disconnect/reconnect when schemas are changed in the remote device.
+                                         The connector subscribes (right after connect) to base netconf notifications and listens for netconf-capability-change notification
+        </li>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:1)boolean
+        </li>
+        <li>
+            default: false
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        <strong>
+        <li id="modules/module/configuration/sal-netconf-connector/dom-registry">
+            container: dom-registry
+        </li>
+        </strong>
+        <ul>
+        </ul>
+        <ul>
+        <strong><li>
+            uses: (urn:opendaylight:params:xml:ns:yang:controller:config)service-ref
+        </li>
+        </strong>
+        <ul>
+        <li>refines:
+            <ul>
+            <li>
+                node name: type
+            </li>
+            </ul>
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        <ul>
+        <strong><li>
+            leaf: type
+        </li>
+        </strong>
+        <ul>
+        <li>
+            description: Type of the service being referenced. Users of this grouping
+                             should refine this leaf with required-identity pointing to
+                             the actual service-type which is actually required.
+        </li>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:1)leafref
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        <strong><li>
+            leaf: name
+        </li>
+        </strong>
+        <ul>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:1)leafref
+        </li>
+        </ul>
+        </ul>
+        </ul>
+        </ul>
+        <ul>
+        <strong>
+        <li id="modules/module/configuration/sal-netconf-connector/binding-registry">
+            container: binding-registry
+        </li>
+        </strong>
+        <ul>
+        </ul>
+        <ul>
+        <strong><li>
+            uses: (urn:opendaylight:params:xml:ns:yang:controller:config)service-ref
+        </li>
+        </strong>
+        <ul>
+        <li>refines:
+            <ul>
+            <li>
+                node name: type
+            </li>
+            </ul>
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        <ul>
+        <strong><li>
+            leaf: type
+        </li>
+        </strong>
+        <ul>
+        <li>
+            description: Type of the service being referenced. Users of this grouping
+                             should refine this leaf with required-identity pointing to
+                             the actual service-type which is actually required.
+        </li>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:1)leafref
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        <strong><li>
+            leaf: name
+        </li>
+        </strong>
+        <ul>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:1)leafref
+        </li>
+        </ul>
+        </ul>
+        </ul>
+        </ul>
+        <ul>
+        <strong>
+        <li id="modules/module/configuration/sal-netconf-connector/event-executor">
+            container: event-executor
+        </li>
+        </strong>
+        <ul>
+        </ul>
+        <ul>
+        <strong><li>
+            uses: (urn:opendaylight:params:xml:ns:yang:controller:config)service-ref
+        </li>
+        </strong>
+        <ul>
+        <li>refines:
+            <ul>
+            <li>
+                node name: type
+            </li>
+            </ul>
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        <ul>
+        <strong><li>
+            leaf: type
+        </li>
+        </strong>
+        <ul>
+        <li>
+            description: Type of the service being referenced. Users of this grouping
+                             should refine this leaf with required-identity pointing to
+                             the actual service-type which is actually required.
+        </li>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:1)leafref
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        <strong><li>
+            leaf: name
+        </li>
+        </strong>
+        <ul>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:1)leafref
+        </li>
+        </ul>
+        </ul>
+        </ul>
+        </ul>
+        <ul>
+        <strong>
+        <li id="modules/module/configuration/sal-netconf-connector/processing-executor">
+            container: processing-executor
+        </li>
+        </strong>
+        <ul>
+        <li>
+            description: Makes up for flaws in netty threading design
+        </li>
+        </ul>
+        <ul>
+        <strong><li>
+            uses: (urn:opendaylight:params:xml:ns:yang:controller:config)service-ref
+        </li>
+        </strong>
+        <ul>
+        <li>refines:
+            <ul>
+            <li>
+                node name: type
+            </li>
+            </ul>
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        <ul>
+        <strong><li>
+            leaf: type
+        </li>
+        </strong>
+        <ul>
+        <li>
+            description: Type of the service being referenced. Users of this grouping
+                             should refine this leaf with required-identity pointing to
+                             the actual service-type which is actually required.
+        </li>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:1)leafref
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        <strong><li>
+            leaf: name
+        </li>
+        </strong>
+        <ul>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:1)leafref
+        </li>
+        </ul>
+        </ul>
+        </ul>
+        </ul>
+        <ul>
+        <strong>
+        <li id="modules/module/configuration/sal-netconf-connector/client-dispatcher">
+            container: client-dispatcher
+        </li>
+        </strong>
+        <ul>
+        </ul>
+        <ul>
+        <strong><li>
+            uses: (urn:opendaylight:params:xml:ns:yang:controller:config)service-ref
+        </li>
+        </strong>
+        <ul>
+        <li>refines:
+            <ul>
+            <li>
+                node name: type
+            </li>
+            </ul>
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        <ul>
+        <strong><li>
+            leaf: type
+        </li>
+        </strong>
+        <ul>
+        <li>
+            description: Type of the service being referenced. Users of this grouping
+                             should refine this leaf with required-identity pointing to
+                             the actual service-type which is actually required.
+        </li>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:1)leafref
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        <strong><li>
+            leaf: name
+        </li>
+        </strong>
+        <ul>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:1)leafref
+        </li>
+        </ul>
+        </ul>
+        </ul>
+        </ul>
+        <ul>
+        <strong><li>
+            leaf: connection-timeout-millis
+        </li>
+        </strong>
+        <ul>
+        <li>
+            description: Specifies timeout in milliseconds after which connection must be established.
+        </li>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:1)uint32
+        </li>
+        <li>
+            default: 20000
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        <strong><li>
+            leaf: default-request-timeout-millis
+        </li>
+        </strong>
+        <ul>
+        <li>
+            description: Timeout for blocking operations within transactions.
+        </li>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:1)uint32
+        </li>
+        <li>
+            default: 60000
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        <strong><li>
+            leaf: max-connection-attempts
+        </li>
+        </strong>
+        <ul>
+        <li>
+            description: Maximum number of connection retries. Non positive value or null is interpreted as infinity.
+        </li>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:1)uint32
+        </li>
+        <li>
+            default: 0
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        <strong><li>
+            leaf: between-attempts-timeout-millis
+        </li>
+        </strong>
+        <ul>
+        <li>
+            description: Initial timeout in milliseconds to wait between connection attempts. Will be multiplied by sleep-factor with every additional attempt
+        </li>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:1)uint16
+        </li>
+        <li>
+            default: 2000
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        <strong><li>
+            leaf: sleep-factor
+        </li>
+        </strong>
+        <ul>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:1)decimal64
+        </li>
+        <li>
+            default: 1.5
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        <strong><li>
+            leaf: keepalive-delay
+        </li>
+        </strong>
+        <ul>
+        <li>
+            description: Netconf connector sends keepalive RPCs while the session is idle, this delay specifies the delay between keepalive RPC in seconds
+                                         If a value <1 is provided, no keepalives will be sent
+        </li>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:1)uint32
+        </li>
+        <li>
+            default: 120
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        <strong>
+        <li id="modules/module/configuration/sal-netconf-connector/keepalive-executor">
+            container: keepalive-executor
+        </li>
+        </strong>
+        <ul>
+        <li>
+            description: Dedicated solely to keepalive execution
+        </li>
+        </ul>
+        <ul>
+        <strong><li>
+            uses: (urn:opendaylight:params:xml:ns:yang:controller:config)service-ref
+        </li>
+        </strong>
+        <ul>
+        <li>refines:
+            <ul>
+            <li>
+                node name: type
+            </li>
+            </ul>
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        <ul>
+        <strong><li>
+            leaf: type
+        </li>
+        </strong>
+        <ul>
+        <li>
+            description: Type of the service being referenced. Users of this grouping
+                             should refine this leaf with required-identity pointing to
+                             the actual service-type which is actually required.
+        </li>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:1)leafref
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        <strong><li>
+            leaf: name
+        </li>
+        </strong>
+        <ul>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:1)leafref
+        </li>
+        </ul>
+        </ul>
+        </ul>
+        </ul>
+        </ul>
+        </ul>
+        
+        <h3>Example</h3>
+        <pre>
+        </pre>
+    </li>
+    </ul>
+    
+    
+    
+    
+  </body>
+</html>

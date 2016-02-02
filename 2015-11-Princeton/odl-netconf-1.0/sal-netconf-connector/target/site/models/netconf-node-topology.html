@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>netconf-node-topology</title>
+  </head>
+  <body>
+    <h1>netconf-node-topology</h1>
+    
+    <h2>Base Information</h2>
+    <table>
+        <tr>
+            <td><strong>prefix</strong></td>
+            <td>nettop</td>
+        </tr>
+        <tr>
+            <td><strong>namespace</strong></td>
+            <td>urn:opendaylight:netconf-node-topology</td>
+        </tr>
+        <tr>
+            <td><strong>revision</strong></td>
+            <td>2015-01-14</td>
+        </tr>
+        <tr>
+            <td><strong>description</strong></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><strong>yang-version</strong></td>
+            <td>1</td>
+        </tr>
+        <tr>
+    <td><strong>imports</strong></td><td>        ext:yang-ext 2013-07-09;
+            inet:ietf-inet-types 2010-09-24;
+            nt:network-topology 2013-10-21;
+    </td>    </tr>
+    </table>
+    
+    <h3>Groupings Summary</h3>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>
+            <a href="#netconf-node-fields"><strong>netconf-node-fields</strong></a>
+            </td>
+            <td>
+            </td>
+        </tr>
+    </table>
+    <h3>Augmentations Summary</h3>
+    <table>
+        <tr>
+            <th>Target</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>
+            <a href="#/network-topology:network-topology/network-topology:topology/network-topology:topology-types/"><strong>/network-topology:network-topology/network-topology:topology/network-topology:topology-types/</strong></a>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <a href="#/network-topology:network-topology/network-topology:topology/network-topology:node/"><strong>/network-topology:network-topology/network-topology:topology/network-topology:node/</strong></a>
+            </td>
+            <td>
+            </td>
+        </tr>
+    </table>
+    
+    
+    
+    <h2>Groupings</h2>
+    <ul>
+    <li>
+        <h3 id="netconf-node-fields">netconf-node-fields</h3>
+        <ul>
+            <ul>
+            <strong><li>
+                leaf: connection-status
+            </li>
+            </strong>
+            <ul>
+            <li>
+                type: (urn:ietf:params:xml:ns:yang:1)enumeration
+            </li>
+            </ul>
+            </ul>
+            <ul>
+            <strong><li>
+                leaf: host
+            </li>
+            </strong>
+            <ul>
+            <li>
+                type: (urn:ietf:params:xml:ns:yang:ietf-inet-types)host
+            </li>
+            </ul>
+            </ul>
+            <ul>
+            <strong><li>
+                leaf: port
+            </li>
+            </strong>
+            <ul>
+            <li>
+                type: (urn:ietf:params:xml:ns:yang:ietf-inet-types)port-number
+            </li>
+            </ul>
+            </ul>
+            <ul>
+            <strong><li>
+                leaf: connected-message
+            </li>
+            </strong>
+            <ul>
+            <li>
+                type: (urn:ietf:params:xml:ns:yang:1)string
+            </li>
+            </ul>
+            </ul>
+            <ul>
+            <strong>
+            <li id="netconf-node-fields/available-capabilities">
+                container: available-capabilities
+            </li>
+            </strong>
+            <ul>
+            </ul>
+            <ul>
+            </ul>
+            <ul>
+            </ul>
+            <ul>
+            </ul>
+            <ul>
+            <ul>
+            <strong><li>
+                leaf-list: available-capability
+            </li>
+            </strong>
+            <ul>
+            <li>
+                type: string
+            </li>
+            </ul>
+            </ul>
+            </ul>
+            </ul>
+            <ul>
+            <strong>
+            <li id="netconf-node-fields/unavailable-capabilities">
+                container: unavailable-capabilities
+            </li>
+            </strong>
+            <ul>
+            </ul>
+            <ul>
+            </ul>
+            <ul>
+            </ul>
+            <ul>
+            </ul>
+            <ul>
+            <ul>
+            <strong>
+            <li id="netconf-node-fields/unavailable-capabilities/unavailable-capability">
+                list: unavailable-capability
+            </li>
+            </strong>
+            <ul>
+            </ul>
+            <ul>
+            </ul>
+            <ul>
+            </ul>
+            <ul>
+            </ul>
+            <ul>
+            <ul>
+            <strong><li>
+                leaf: capability
+            </li>
+            </strong>
+            <ul>
+            <li>
+                type: (urn:ietf:params:xml:ns:yang:1)string
+            </li>
+            </ul>
+            </ul>
+            <ul>
+            <strong><li>
+                leaf: failure-reason
+            </li>
+            </strong>
+            <ul>
+            <li>
+                type: (urn:ietf:params:xml:ns:yang:1)enumeration
+            </li>
+            </ul>
+            </ul>
+            </ul>
+            </ul>
+            </ul>
+            </ul>
+            <ul>
+            <strong>
+            <li id="netconf-node-fields/pass-through">
+                container: pass-through
+            </li>
+            </strong>
+            <ul>
+            <li>
+                description: When the underlying node is connected, its NETCONF context
+                                is available verbatim under this container through the
+                                mount extension.
+            </li>
+            <li>
+                when condition: ../connection-status = connected
+            </li>
+            </ul>
+            <ul>
+            </ul>
+            <ul>
+            </ul>
+            <ul>
+            </ul>
+            <ul>
+            </ul>
+            </ul>
+        </ul>
+    </li>
+    </ul>
+    
+    
+    
+    
+    <h2>Augmentations</h2>
+    
+    <ul>
+    <li>
+        <h3 id="/network-topology:network-topology/network-topology:topology/network-topology:topology-types/">
+        Target [(urn:TBD:params:xml:ns:yang:network-topology)/network-topology:network-topology/network-topology:topology/network-topology:topology-types/]</h3>
+            Status: <strong>CURRENT</strong>
+        <ul>
+        <strong>
+        <li id="network-topology/topology/topology-types/topology-netconf">
+            container: topology-netconf
+        </li>
+        </strong>
+        <ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        </ul>
+        </ul>
+        
+        <h3>Example</h3>
+        <pre>
+        &lt;topology-types xmlns="urn:TBD:params:xml:ns:yang:network-topology"&gt;
+            &lt;topology-netconf&gt;
+            &lt;/topology-netconf&gt;
+        &lt;/topology-types&gt;
+        </pre>
+    </li>
+    <li>
+        <h3 id="/network-topology:network-topology/network-topology:topology/network-topology:node/">
+        Target [(urn:TBD:params:xml:ns:yang:network-topology)/network-topology:network-topology/network-topology:topology/network-topology:node/]</h3>
+            Status: <strong>CURRENT</strong>
+        When ../../nt:topology-types/topology-netconf
+        <ul>
+        <strong><li>
+            leaf: connection-status
+        </li>
+        </strong>
+        <ul>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:1)enumeration
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        <strong><li>
+            leaf: host
+        </li>
+        </strong>
+        <ul>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:ietf-inet-types)host
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        <strong><li>
+            leaf: port
+        </li>
+        </strong>
+        <ul>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:ietf-inet-types)port-number
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        <strong><li>
+            leaf: connected-message
+        </li>
+        </strong>
+        <ul>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:1)string
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        <strong>
+        <li id="network-topology/topology/node/available-capabilities">
+            container: available-capabilities
+        </li>
+        </strong>
+        <ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        <ul>
+        <strong><li>
+            leaf-list: available-capability
+        </li>
+        </strong>
+        <ul>
+        <li>
+            type: string
+        </li>
+        </ul>
+        </ul>
+        </ul>
+        </ul>
+        <ul>
+        <strong>
+        <li id="network-topology/topology/node/unavailable-capabilities">
+            container: unavailable-capabilities
+        </li>
+        </strong>
+        <ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        <ul>
+        <strong>
+        <li id="network-topology/topology/node/unavailable-capabilities/unavailable-capability">
+            list: unavailable-capability
+        </li>
+        </strong>
+        <ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        <ul>
+        <strong><li>
+            leaf: capability
+        </li>
+        </strong>
+        <ul>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:1)string
+        </li>
+        </ul>
+        </ul>
+        <ul>
+        <strong><li>
+            leaf: failure-reason
+        </li>
+        </strong>
+        <ul>
+        <li>
+            type: (urn:ietf:params:xml:ns:yang:1)enumeration
+        </li>
+        </ul>
+        </ul>
+        </ul>
+        </ul>
+        </ul>
+        </ul>
+        <ul>
+        <strong>
+        <li id="network-topology/topology/node/pass-through">
+            container: pass-through
+        </li>
+        </strong>
+        <ul>
+        <li>
+            description: When the underlying node is connected, its NETCONF context
+                            is available verbatim under this container through the
+                            mount extension.
+        </li>
+        <li>
+            when condition: ../connection-status = connected
+        </li>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        </ul>
+        <ul>
+        </ul>
+        </ul>
+        
+        <h3>Example</h3>
+        <pre>
+        &lt;node xmlns="urn:TBD:params:xml:ns:yang:network-topology"&gt;
+            &lt;node-id&gt;. . .&lt;/node-id&gt;
+            &lt;supporting-node xmlns="urn:TBD:params:xml:ns:yang:network-topology"&gt;
+                &lt;topology-ref&gt;. . .&lt;/topology-ref&gt;
+                &lt;node-ref&gt;. . .&lt;/node-ref&gt;
+            &lt;/supporting-node&gt;
+            &lt;termination-point xmlns="urn:TBD:params:xml:ns:yang:network-topology"&gt;
+                &lt;tp-id&gt;. . .&lt;/tp-id&gt;
+                &lt;tp-ref&gt;. . .&lt;/tp-ref&gt;
+                &lt;tp-ref&gt;. . .&lt;/tp-ref&gt;
+                &lt;tp-ref&gt;. . .&lt;/tp-ref&gt;
+            &lt;/termination-point&gt;
+            &lt;connection-status&gt;. . .&lt;/connection-status&gt;
+            &lt;host&gt;. . .&lt;/host&gt;
+            &lt;port&gt;. . .&lt;/port&gt;
+            &lt;connected-message&gt;. . .&lt;/connected-message&gt;
+            &lt;available-capabilities&gt;
+                &lt;available-capability&gt;. . .&lt;/available-capability&gt;
+                &lt;available-capability&gt;. . .&lt;/available-capability&gt;
+                &lt;available-capability&gt;. . .&lt;/available-capability&gt;
+            &lt;/available-capabilities&gt;
+            &lt;unavailable-capabilities&gt;
+                &lt;unavailable-capability&gt;
+                    &lt;capability&gt;. . .&lt;/capability&gt;
+                    &lt;failure-reason&gt;. . .&lt;/failure-reason&gt;
+                &lt;/unavailable-capability&gt;
+            &lt;/unavailable-capabilities&gt;
+            &lt;pass-through&gt;
+            &lt;/pass-through&gt;
+        &lt;/node&gt;
+        </pre>
+    </li>
+    </ul>
+    
+    
+    
+    
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.8">
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/test/java/org/opendaylight/controller/sal/connect/netconf/NetconfToRpcRequestTest.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/test/java/org/opendaylight/controller/sal/connect/netconf/schema/mapping/NetconfMessageTransformerTest.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/test/java/org/opendaylight/controller/sal/connect/netconf/NetconfDeviceTest.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/test/java/org/opendaylight/controller/sal/connect/netconf/listener/NetconfDeviceCommunicatorTest.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/test/java/org/opendaylight/controller/sal/connect/netconf/listener/NetconfSessionPreferencesTest.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/test/java/org/opendaylight/controller/sal/connect/netconf/NetconfToNotificationTest.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/test/java/org/opendaylight/controller/sal/connect/netconf/sal/tx/ReadOnlyTxTest.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/test/java/org/opendaylight/controller/sal/connect/netconf/sal/tx/NetconfDeviceWriteOnlyTxTest.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/test/java/org/opendaylight/controller/sal/connect/netconf/sal/KeepaliveSalFacadeTest.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/test/java/org/opendaylight/controller/sal/connect/netconf/sal/NetconfDeviceTopologyAdapterTest.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/test/java/org/opendaylight/controller/sal/connect/netconf/NetconfStateSchemasTest.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/test/resources/netconf-state.schemas.payload.xml">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/test/resources/notification-payload.xml">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/config/yang/md/sal/connector/netconf/NetconfConnectorModuleFactory.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/config/yang/md/sal/connector/netconf/NetconfConnectorModule.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/SchemalessNetconfFacade.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/SchemalessNetconfDevice.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/schema/NetconfRemoteSchemaYangSourceProvider.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/schema/mapping/NetconfMessageTransformer.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/NetconfDevice.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/listener/NetconfDeviceCapabilities.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/listener/NetconfSessionPreferences.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/listener/UncancellableFuture.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/listener/NetconfDeviceCommunicator.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/NotificationHandler.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/package-info.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/sal/NetconfDeviceTopologyAdapter.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/sal/NetconfDeviceSalFacade.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/sal/KeepaliveSalFacade.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/sal/tx/WriteCandidateTx.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/sal/tx/WriteRunningTx.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/sal/tx/ReadOnlyTx.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/sal/tx/ReadWriteTx.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/sal/tx/AbstractWriteTx.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/sal/tx/WriteCandidateRunningTx.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/sal/NetconfDeviceDataBroker.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/sal/NetconfDeviceNotificationService.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/sal/NetconfDeviceSalProvider.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/sal/CachingTransactionChain.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/sal/NetconfDeviceRpc.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/sal/NetconfDeviceDatastoreAdapter.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/SchemalessDataBroker.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/NetconfStateSchemas.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/util/NetconfMessageTransformUtil.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/util/NetconfBaseOps.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/util/NodeContainerProxy.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/netconf/util/NetconfRpcFutureCallback.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/api/RemoteDeviceHandler.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/api/SchemaContextProviderFactory.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/api/RemoteDevice.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/api/package-info.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/api/RemoteDeviceCommunicator.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/api/MessageTransformer.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/util/RemoteDeviceId.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/util/package-info.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/src/main/java/org/opendaylight/controller/sal/connect/util/MessageCounter.java">
+</file>
+<file name="/home/chuck/odlcontroller/controller/opendaylight/md-sal/sal-netconf-connector/pom.xml">
+</file>
+</checkstyle>
