@@ -1,0 +1,74 @@
+<html>
+<head>
+	<link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap-theme.min.css">
+	<script src="jquery-2.2.0-comp/jquery-2.2.0.min.js"></script>
+	<script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+	<script src="bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+
+
+	<script src="index.js"></script>
+	<script>$(function(){refresh();});</script>
+
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-static-top">
+		<a class="navbar-brand" href="#">BGP Bogons Detector</a>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10">
+				<table id="TableSourcedNetworks" class="table table-striped">
+					<tbody id="TbodySourcedNetworks">
+						<tr>
+							<td>iosxrv-1</td>
+						</tr>
+						<tr>
+							<td>iosxrv-2</td>
+						</tr>
+						<tr>
+							<td>iosxrv-3</td>
+						</tr>
+						<tr>
+							<td>iosxrv-4</td>
+						</tr>
+						<tr>
+							<td>iosxrv-5</td>
+						</tr>
+						<tr>
+							<td>iosxrv-6</td>
+						</tr>
+						<tr>
+							<td>iosxrv-7</td>
+						</tr>
+						<tr>
+							<td>iosxrv-8</td>
+						</tr>
+					</tbody>
+				</table>
+				<button type="button" class="btn btn-info" onclick="refresh();">Refresh</button>
+			</div>
+			<div class="col-md-2">
+				<table class="table table-striped">
+					<tbody>
+						<tr>
+							<td>RFC1918</td>
+							<td>10.0.0.0/8</td>
+						</tr>
+						<tr>
+							<td>RFC1918</td>
+							<td>172.16.0.0/12</td>
+						</tr>
+						<tr>
+							<td>RFC1918</td>
+							<td>192.168.0.0/16</td>
+						</tr>
+					</tbody>
+				</table>
+				<button type="button" class="btn btn-warning" onclick="detect();">Detect</button>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>
