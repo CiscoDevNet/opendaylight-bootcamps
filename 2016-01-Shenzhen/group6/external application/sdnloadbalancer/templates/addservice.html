@@ -1,0 +1,103 @@
+{% extends "index.html" %}
+{% block content %}
+    <p>.</p>
+
+    <div class="page-header">
+            <h4>Config the virtual ip and real server mapping</h4>
+    </div>
+        <div class="page-header">
+
+        <form  action="/addservice" method="post" role = "form" onsubmit="return">
+
+<div class="row">
+  <div class="col-lg-4">
+   <div class = "form-group">
+    <label for="exampleInputEmail1">Virtual Ip Address</label>
+      <input class = "form-control" type = "text" id="vip" name="vip" placeholder = "" autocomplete="off">
+   </div>
+
+</div>
+
+     <div class="col-lg-4">
+
+     <div class = "form-group">
+             <label for="exampleInputEmail1">L4 protocol</label>
+
+      <select class = "form-control" name="protocol" autocomplete="off">
+         <option value = "tcp">TCP</option>
+         <option value = "udp">UDP</option>
+      </select>
+
+
+   </div>
+   </div>
+
+
+
+     <div class="col-lg-4">
+        <label for="exampleInputEmail1">Virtual Port</label>
+
+ <div class="input-group" >
+            <input class = "form-control" type = "text" id="vport" name="vport" placeholder = "" autocomplete="off">
+
+           <span class="input-group-btn">
+        <button class="btn btn-default" type="submit">Submit!</button>
+      </span>
+</div>
+  </div>
+
+</div>
+
+
+        <div class="row">
+    <h5>   Choose Backend Servers Here! </h5>
+</div>
+            <div class="row">
+
+    {% for bs in list_bs_pool %}
+
+  <div class="col-md-3">
+   <input type="checkbox" name="checkbox"   autocomplete="off" value={{ bs.bs_id }}  > {{ bs.ipaddr }}
+   </div>
+
+
+    {% endfor %}
+
+</div>
+
+</form>
+
+        </div>
+
+      <table class="table table-bordered" id="guangshuai_table">
+                        <thead>
+                                <th>Virtual Ip</th>
+                                <th>Service Protocol</th>
+                                <th>Virtual Port</th>
+                                <th></th>
+
+    </thead>
+    <tbody>
+
+    {% for vs in virtual_services %}
+        <tr >
+            <td>{{ vs.vip }}</td>
+            <td>{{ vs.protocol }}</td>
+            <td>{{ vs.vport }}</td>
+            <td>
+                  <a href="/delvirtualservice/{{ vs.id }}" data-toggle="modal">
+                            <i class="fa fa-trash"></i>
+                </a>
+            </td>
+
+        </tr>
+    {% endfor %}
+
+
+
+
+          </tbody>
+    </table>
+
+
+{% endblock %}

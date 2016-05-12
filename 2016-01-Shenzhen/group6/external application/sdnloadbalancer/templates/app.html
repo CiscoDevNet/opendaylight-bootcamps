@@ -1,0 +1,109 @@
+{% extends "index.html" %}
+
+
+{% block src %}
+        <!-- <link href="/static/css/bootstrap.min.css" rel="stylesheet"> -->
+
+        <!-- Font Awesome CSS -->
+        <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+        
+        <!-- Custom CSS -->
+        <link href="/static/css/animate.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="/static/css/style.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+{#        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>#}
+
+        <!-- Template js -->
+        <script src="/static/js/jquery-2.1.1.min.js"></script>
+        <script src="/static/js/bootstrap.min.js"></script>
+        <script src="/static/js/jquery.appear.js"></script>
+        <script src="/static/js/contact_me.js"></script>
+        <script src="/static/js/jqBootstrapValidation.js"></script>
+        <script src="/static/js/modernizr.custom.js"></script>
+        <script src="/static/js/script.js"></script>
+            <link href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+        <link href="/static/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Timeline CSS -->
+        <link href="/static/dist/css/timeline.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+        <link href="/static/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+        <link href="/static/bower_components/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+        <link href="/static/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="/static/css/slight-submenu.css" />
+{% endblock %}
+
+{% block content %}
+
+        <!-- End Logo Section -->
+
+        <!-- Start Main Body Section -->
+        <div class="mainbody-section text-center">
+            <div class="container">
+
+                <div class="row">
+                    
+                    <div class="col-md-3">
+                        
+                        <div class="menu-item blue">
+                            <a href="/backends" data-toggle="modal">
+                                <i class="fa fa-cubes"></i>
+                                <p>Backend Servers</p>
+                            </a>
+                        </div>
+                        
+                        <div class="menu-item green">
+                            <a href="/clients" data-toggle="modal">
+                                <i class="fa fa-file-photo-o"></i>
+                                <p>Add Client Informations(proactive)</p>
+                            </a>
+                        </div>
+                        
+
+                        
+                    </div>
+                                        <div class="col-md-3">
+                        
+                          <div class="menu-item color responsive">
+                                    <a href="#" data-toggle="modal">
+                                        <i class="fa fa-bars"></i>
+                                        <p>Flows View(TODO)</p>
+                                    </a>
+                                </div>
+                        
+                       <div class="menu-item light-orange responsive-2">
+                                    <a href="#team-modal" data-toggle="modal">
+                                        <i class="fa fa-bug"></i>
+                                        <p>Bug Report(TODO)</p>
+                                    </a>
+                                </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="menu-item light-red">
+                            <a href="/addservice" data-toggle="modal">
+                                <i class="fa fa-pencil"></i>
+                                <p>Add Virtual Services</p>
+                            </a>
+                        </div>
+{#                        <div class="menu-item color">#}
+{#                            <a href="#testimonial-modal" data-toggle="modal">#}
+{#                                <i class="fa fa-bug"></i>#}
+{#                                <p>Bug Report</p>#}
+{#                            </a>#}
+{#                        </div>#}
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
