@@ -1,0 +1,13 @@
+.slight-submenu-master-ul {
+    position: relative;
+}
+
+.slight-submenu-button {
+    background: #ccc;
+    display: inline;
+    margin-left: 8px;
+    width: 10px;
+    height: 18px;
+    cursor: pointer;
+    position: absolute;
+}
