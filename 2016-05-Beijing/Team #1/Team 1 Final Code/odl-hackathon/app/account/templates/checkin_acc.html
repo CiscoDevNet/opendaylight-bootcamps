@@ -1,0 +1,35 @@
+<div class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title blue bigger">
+                    Checkin
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form action="{{ url_for('account.do_checkin') }}" class="form-horizontal ui-form" method="post">
+                    <input type="hidden" name="user_id" value="{{ user_id }}"/>
+                    <div class="form-group">
+                        <label for="password" class="control-label required">MAC Address：</label>
+                        <div class="control-input">
+                            <input type="text" name="mac"
+                                   class="form-control required"
+                                   placeholder="Which Computer?"/>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" id="submit" class="btn btn-primary">
+                            <i class="icon-save icon-large"></i>Checkin
+                        </button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            <i class="icon-arrow-left icon-large"></i>Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
