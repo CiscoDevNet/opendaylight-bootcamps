@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div class="row">
+
+        <div id="graph-container" class="col-md-12" style="min-height: 730px"></div>
+        <script src="{{ url_for('static', filename='topology.js') }}">
+        </script>
+        <script type="text/javascript">
+            drawTopo({{ topo_json|safe }});
+        </script>
+    </div>
+{% endblock %}

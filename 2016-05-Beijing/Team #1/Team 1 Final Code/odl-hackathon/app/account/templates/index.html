@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div class="page-title">
+        <div class="title_left">
+            <h3>
+                Tables
+                <small>
+                    User List
+                </small>
+            </h3>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+        <a href="{{ url_for('account.create_account') }}" class="btn btn-primary ajax">Create</a>
+    </div>
+    <div class="row">
+        <div class="x_panel">
+            <div class="x_content">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>UserName</th>
+                        <th>VDC</th>
+                        <th>State</th>
+                        <th>Checkin Computer Mac</th>
+                        <th>Checkin/Checkout</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for account in account_list %}
+                        <tr>
+                            <th>{{ account.id }}</th>
+                            <td>{{ account.user_name }}</td>
+                            <td>{{ VDC_DICT[account.vdc_id] }}</td>
+                            <td>
+                                {% if account.check_in_mac_addr==None %}
+                                    CHECKOUT
+                                {% else %}
+                                    CHECKIN
+                                {% endif %}
+                            </td>
+                            <td>{{ account.check_in_mac_addr }}</td>
+                            <td>
+                                {% if account.check_in_mac_addr==None %}
+                                    <a href="{{ url_for('account.checkin', user_id=account.id) }}"
+                                       class="btn btn-xs btn-success ajax">checkin</a>
+                                {% else %}
+                                    <a href="{{ url_for('account.checkout', user_id=account.id) }}"
+                                       class="btn btn-xs btn-warning ajax" ask="Are you confirm?">checkout</a>
+                                {% endif %}
+                                <a href="{{ url_for('account.account_delete', user_id=account.id) }}"
+                                   class="btn btn-xs btn-danger ajax"
+                                   ask="Are you confirm?">Delete</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
