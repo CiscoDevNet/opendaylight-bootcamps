@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://getbootstrap.com/examples/dashboard/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+    <title>ODL Controller</title>
+        <link rel="stylesheet" href="../../static/dest/css/next.css">
+    <link href="../../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../static/css/dashboard.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://getbootstrap.com/examples/dashboard/#">ODL Controller</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://getbootstrap.com/examples/dashboard/#">Welcome, User</a></li>
+            <li><a href="http://getbootstrap.com/examples/dashboard/#">Sign In</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search App...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Emulator <span class="sr-only">(current)</span></a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          	<h1 class="page-header">Latency Emulator</h1>
+          	<div class="col-md-3">
+          		<div class="form-group">
+				    <label for="AppName">Node Name</label>
+				    <input type="text" class="form-control" id="node"></input>
+				  </div>
+			</div>
+			<div class="col-md-1" style="margin-top:25px">
+				<button type="button"  class="btn btn-success" style="width:80px" id="down">Down</button>
+			</div>
+			<div class="col-md-1" style="margin-top:25px" style="width:80px">
+				<button type="button"  class="btn btn-success" id="latency">Latency</button>
+			</div>
+			<div class="col-md-1" style="margin-top:25px" style="width:80px">
+				<button type="button"  class="btn btn-success" id="recovery">Recovery</button>
+			</div>
+			<div class="col-md-3" style="margin-top:30px;margin-left:30px" style="width:80px">
+				<span id="result" style="color:red"></span>
+			</div>
+			
+          </div>
+        </div>
+      </div>
+    </div>
+
+	<script src="../../static/js/jquery-1.12.3.min.js"></script>
+	<script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../../static/dest/js/next.js"></script>
+	<script>
+		$(document).ready(function(){
+	      $("#down").click(function(){
+	        $.get("/changeState/", {"action":"2"} , function(ret){
+	            $('#result').html(ret);
+	        })
+	      });
+	      $("#latency").click(function(){
+	        $.get("/changeState/", {"action":"3"} , function(ret){
+	            $('#result').html(ret);
+	        })
+	      });
+	      $("#recovery").click(function(){
+	        $.get("/changeState/", {"action":"1"} , function(ret){
+	            $('#result').html(ret);
+	        })
+	      });
+	    });
+	</script>
+	
+</body>
+</html>
