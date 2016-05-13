@@ -27,7 +27,9 @@ def reset(request):
 
 
 def refresh_req():
-    url = "http://" + bind_host + ":8181/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/iosxrv-8/yang-ext:mount/Cisco-IOS-XR-pfi-im-cmd-oper:interfaces"
+    url = "http://" + bind_host + ":8181/restconf/operational/network-topology:network-topology/topology/" \
+                                  "topology-netconf/node/iosxrv-8/yang-ext:mount/Cisco-IOS-XR-pfi-im-cmd-oper:" \
+                                  "interfaces"
 
     headers = {
         'authorization': "Basic YWRtaW46YWRtaW4=",
@@ -40,8 +42,13 @@ def refresh_req():
     string = string.replace('false', 'False').replace('true', 'True')
     res = eval(string)
     if 'interfaces' in res.keys():
-        tr1 =  res['interfaces']['interface-xr']['interface'][1]['data-rates']['output-data-rate']
-        tr2 =  res['interfaces']['interface-xr']['interface'][2]['data-rates']['output-data-rate']
+        for interface in res['interfaces']['interface-xr']['interface']:
+            if interface['interface-name'] == 'GigabitEthernet0/0/0/1':
+                tr1 = interface['data-rates']['output-data-rate']
+            if interface['interface-name'] == 'GigabitEthernet0/0/0/2':
+                tr2 = interface['data-rates']['output-data-rate']
+        # tr1 =  res['interfaces']['interface-xr']['interface'][1]['data-rates']['output-data-rate']
+        # tr2 =  res['interfaces']['interface-xr']['interface'][7]['data-rates']['output-data-rate']
     else:
         tr1 = 0
         tr2 = 0
@@ -50,9 +57,19 @@ def refresh_req():
 
 
 def switch_req():
-    url = "http://" + bind_host + ":8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/iosxrv-8/yang-ext:mount/Cisco-IOS-XR-ipv4-acl-cfg:ipv4-acl-and-prefix-list/accesses/access/penxiao"
+    url = "http://" + bind_host + ":8181/restconf/config/network-topology:network-topology/topology/topology-netconf/" \
+                                  "node/iosxrv-8/yang-ext:mount/Cisco-IOS-XR-ipv4-acl-cfg:ipv4-acl-and-prefix-list/" \
+                                  "accesses/access/penxiao"
 
-    payload = "{\n    \"access\": [\n    {\n        \"access-list-name\": \"penxiao\",\n        \"access-list-entries\": {\n          \"access-list-entry\": [\n            {\n              \"sequence-number\": 20,\n              \"grant\": \"permit\"\n            },\n            {\n              \"sequence-number\": 10,\n              \"grant\": \"permit\",\n              \"dscp\": \"cs1\",\n              \"next-hop\": {\n                \"next-hop-type\": \"regular-next-hop\",\n                \"next-hop-1\": {\n                  \"next-hop\": \"49.0.0.22\"\n                }\n              }\n            }\n          ]\n        }\n      }\n    ]\n}"
+    payload = "{\n    \"access\": [\n    {\n        \"access-list-name\": \"penxiao\",\n        " \
+              "\"access-list-entries\": {\n          \"access-list-entry\": [\n            {\n             " \
+              " \"sequence-number\": 20,\n              \"grant\": \"permit\"\n            },\n           " \
+              " {\n              \"sequence-number\": 10,\n              \"grant\": \"permit\",\n              " \
+              "\"dscp\": \"cs1\",\n              \"next-hop\": {\n                \"next-hop-type\": " \
+              "\"regular-next-hop\",\n                \"next-hop-1\": {\n                  " \
+              "\"next-hop\": \"49.0.0.22\"\n                }\n              }\n            }\n          ]\n       " \
+              " " \
+              "}\n      }\n    ]\n}"
     headers = {
         'authorization': "Basic YWRtaW46YWRtaW4=",
         'content-type': "application/json",
@@ -64,9 +81,17 @@ def switch_req():
 
     print(response.text)
 
-    url = "http://" + bind_host + ":8181/restconf/config/opendaylight-inventory:nodes/node/iosxrv-8/yang-ext:mount/Cisco-IOS-XR-ifmgr-cfg:interface-configurations/interface-configuration/act/GigabitEthernet0%252F0%252F0%252F4"
+    url = "http://" + bind_host + ":8181/restconf/config/opendaylight-inventory:nodes/node/iosxrv-8/yang-ext:mount/" \
+                                  "Cisco-IOS-XR-ifmgr-cfg:interface-configurations/interface-configuration/act/" \
+                                  "GigabitEthernet0%252F0%252F0%252F1"
 
-    payload = "{\n  \"interface-configuration\": [\n    {\n      \"active\": \"act\",\n      \"interface-name\": \"GigabitEthernet0/0/0/4\",\n      \"Cisco-IOS-XR-ip-pfilter-cfg:ipv4-packet-filter\": {\n        \"inbound\": {\n          \"name\": \"penxiao\"\n        }\n      },\n      \"Cisco-IOS-XR-drivers-media-eth-cfg:ethernet\": {\n        \"speed\": \"10\"\n      },\n      \"Cisco-IOS-XR-ipv4-io-cfg:ipv4-network\": {\n        \"addresses\": {\n          \"primary\": {\n            \"netmask\": \"255.255.255.0\",\n            \"address\": \"56.0.0.30\"\n          }\n        }\n      }\n    }\n  ]\n}"
+    payload = "{\n  \"interface-configuration\": [\n    {\n      \"active\": \"act\",\n      \"interface-name\": " \
+              "\"GigabitEthernet0/0/0/1\",\n      \"Cisco-IOS-XR-ip-pfilter-cfg:ipv4-packet-filter\": {\n        " \
+              "\"inbound\": {\n          \"name\": \"penxiao\"\n        }\n      },\n      " \
+              "\"Cisco-IOS-XR-drivers-media-eth-cfg:ethernet\": {\n        \"speed\": \"10\"\n      },\n      " \
+              "\"Cisco-IOS-XR-ipv4-io-cfg:ipv4-network\": {\n        \"addresses\": {\n          " \
+              "\"primary\": {\n            \"netmask\": \"255.255.255.0\",\n            " \
+              "\"address\": \"46.0.0.30\"\n          }\n        }\n      }\n    }\n  ]\n}"
     headers = {
         'content-type': "application/json",
         'authorization': "Basic YWRtaW46YWRtaW4=",
