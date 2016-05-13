@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="static/js/topology.js"></script>
+    <script type="text/javascript" src="static/js/jquery-2.2.3.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width:100%;height:400px;position:relative;top:0px;padding:0px;" class="topo_tooltip" id="topo_tooltip"></div>
+    <div class="col-xs-12">
+        <form action="/switch/" method="get">
+            <button type="button" id='sw'>Switch Internet Traffic Path</button>
+        </form><br>
+        <form action="/reset/" method="get">
+            <button type="button" id='set'>Reset Internet Traffic path</button>
+        </form><br>
+        <form action="/refresh/" method="get">
+            <button type="button" id='fresh'>Refresh Traffic</button>
+        </form><br>
+        <span id='result'></span>
+    </div>
+<script type="text/javascript">
+jQuery(function() {    //Init a network
+    var
+            network = new c_topo.Network(),
+        //Init a elementbox for caching network elements
+            elementBox = new c_topo.elementBox(),
+            node1, node2, node3, edge12, edge13, edge23;
+    //Render the network to a div with the id 'main'
+    network.bindContainer('main');
+
+    network.registerImages([
+        ['router', '/static/images/router.png', '55', '31'],
+        ['node', '/static/images/node.png', '5', '5'],
+        ['VOIP', '/static/images/1.png', '20', '6'],
+        ['INTERNET', '/static/images/2.png', '20', '6']
+    ]);
+    node1 = new c_topo.Node();
+    node1.setId(1);
+    node1.setName(2);
+    node1.setLabel("sjc\n198.18.1.37");
+    node1.setImage("router");
+    node1.setLocation(250, 150);
+    elementBox.addElements(node1);
+
+    node2 = new c_topo.Node();
+    node2.setId(2);
+    node2.setName(2);
+    node2.setLabel("lax\n198.18.1.31");
+    node2.setImage("router");
+    node2.setLocation(550, 300);
+    elementBox.addElements(node2);
+
+    node3 = new c_topo.Node();
+    node3.setId(3);
+    node3.setName(3);
+    node3.setLabel("kcy\n198.18.1.30");
+    node3.setImage("router");
+    node3.setLocation(850, 150);
+    elementBox.addElements(node3);
+
+    edge12 = new c_topo.Line();
+    edge12.setFromNode(node1);
+    edge12.setEndNode(node2);
+    edge12.setColor([155, 147, 147]);
+    edge12.setWeight(0.4);
+    elementBox.addElements(edge12);
+
+    edge13 = new c_topo.Line();
+    edge13.setFromNode(node1);
+    edge13.setEndNode(node3);
+    edge13.setColor([155, 147, 147]);
+    edge13.setWeight(0.4);
+    elementBox.addElements(edge13);
+
+    edge23 = new c_topo.Line();
+    edge23.setFromNode(node2);
+    edge23.setEndNode(node3);
+    edge23.setColor([155, 147, 147]);
+    edge23.setWeight(0.4);
+    elementBox.addElements(edge23);
+
+    var node4, node5, node6, node7, node8, node9;
+    var edge67, edge89;
+
+    node4 = new c_topo.Node();
+    node4.setId(4);
+    node4.setName(4);
+    node4.setLabel("VOIP");
+    node4.setImage('VOIP');
+    node4.setLocation(50, 50);
+    elementBox.addElements(node4);
+
+    node5 = new c_topo.Node();
+    node5.setId(5);
+    node5.setName(5);
+    node5.setLabel("Internet");
+    node5.setImage('INTERNET');
+    node5.setLocation(150, 50);
+    elementBox.addElements(node5);
+
+    node6 = new c_topo.Node();
+    node6.setId(6);
+    node6.setName(6);
+    node6.setImage('node');
+    node6.setLocation(350, 130);
+    elementBox.addElements(node6);
+
+    node7 = new c_topo.Node();
+    node7.setId(7);
+    node7.setName(7);
+    node7.setImage('node');
+    node7.setLocation(650, 130);
+    elementBox.addElements(node7);
+
+    edge67 = new c_topo.Line();
+    edge67.setFromNode(node6);
+    edge67.setEndNode(node7);
+    edge67.setColor([255, 0, 0]);
+    edge67.setWeight(0.6);
+    elementBox.addElements(edge67);
+
+    node8 = new c_topo.Node();
+    node8.setId(8);
+    node8.setName(8);
+    node8.setImage('node');
+    node8.setLocation(350, 120);
+{#    node8.setLocation(300, 190);#}
+    elementBox.addElements(node8);
+
+    node9 = new c_topo.Node();
+    node9.setId(9);
+    node9.setName(9);
+    node9.setImage('node');
+    node9.setLocation(650, 120);
+{#    node9.setLocation(500, 290);#}
+    elementBox.addElements(node9);
+
+    edge89 = new c_topo.Line();
+    edge89.setFromNode(node8);
+    edge89.setEndNode(node9);
+    edge89.setColor([0, 0, 255]);
+    edge89.setWeight(0.6);
+    elementBox.addElements(edge89);
+
+    var node10, node11;
+
+    node10 = new c_topo.Node();
+    node10.setId(10);
+    node10.setName(10);
+    node10.setLabel("{{ TTT }}");
+    node10.setImage('node');
+    node10.setLocation(550, 170);
+    elementBox.addElements(node10);
+
+    node11 = new c_topo.Node();
+    node11.setId(11);
+    node11.setName(11);
+    node11.setLabel("{{ BBB }}");
+    node11.setImage('node');
+    node11.setLocation(360, 230);
+    elementBox.addElements(node11);
+
+    network.setElementBox(elementBox);
+
+    $(document).ready(function(){
+      $("#fresh").click(function(){
+
+        $.get("/refresh/",{}, function(ret){
+            var j = eval('(' + ret + ')');
+            console.log(j);
+            node10.setLabel(j['TTT']);
+            node11.setLabel(j['BBB']);
+            network.refreshTopology();
+        })
+      });
+    });
+
+    $(document).ready(function(){
+      $("#sw").click(function(){
+
+        $.get("/switch/",{}, function(ret){
+            if (ret=='OK') {
+                $('#result').html("Internet traffic is switched to backup path");
+                node8.setLocation(300, 190);
+                node9.setLocation(500, 290);
+                network.refreshTopology();
+            }
+        })
+      });
+    });
+
+    $(document).ready(function(){
+      $("#set").click(function(){
+
+        $.get("/reset/",{}, function(ret){
+            if (ret=='OK') {
+                $('#result').html("Reset path");
+                node8.setLocation(350, 120);
+                node9.setLocation(650, 120);
+                network.refreshTopology();
+            }
+        })
+      });
+    });
+
+});
+
+</script>
+</body>
+</html>
