@@ -1,0 +1,23 @@
+module hack {
+    yang-version 1;
+    namespace "urn:opendaylight:params:xml:ns:yang:hack";
+    prefix "hack";
+
+    revision "2015-01-05" {
+        description "Initial revision of hack model";
+    }
+    
+    rpc start-hack {
+        input {
+            leaf time {
+                type string;
+            }
+        }
+        output {
+            leaf result {
+                type string;
+            }
+        }
+    }
+    
+}
