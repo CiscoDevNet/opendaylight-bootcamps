@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>odlcontroller</name>
+	<comment></comment>
+	<projects>
+		<project>cosc-learning-labs</project>
+		<project>odl-learning-labs</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.python.pydev.PyDevBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.python.pydev.pythonNature</nature>
+		<nature>org.python.pydev.django.djangoNature</nature>
+	</natures>
+</projectDescription>

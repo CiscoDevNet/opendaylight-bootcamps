@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://getbootstrap.com/examples/dashboard/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+    <title>ODL Controller</title>
+        <link rel="stylesheet" href="../../static/dest/css/next.css">
+    <link href="../../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../static/css/dashboard.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://getbootstrap.com/examples/dashboard/#">ODL Controller</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://getbootstrap.com/examples/dashboard/#">Welcome, User</a></li>
+            <li><a href="http://getbootstrap.com/examples/dashboard/#">Sign In</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search App...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="/">Overview</a></li>
+            <li class="active"><a href="/applist/">App List  <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">App Detail</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Your Applications</h1>
+          <div class="col-md-12">
+          	<div class="col-md-10"><h2>App List</h2></div>
+          	<div class="col-md-2" style="top:27px;text-align:right"><button type="button"  class="btn btn-success">Add App</button></div>
+          </div>
+          <div class="col-md-12">
+	          <div class="table-responsive">
+	            <table class="table table-striped">
+	              <thead>
+	                <tr>
+	                  <th>App Name</th>
+	                  <th>Priority</th>
+	                  <th>Status</th>
+	                  <th>Health</th>
+	                  <th>Detail</th>
+	                </tr>
+	              </thead>
+	              <tbody>
+	              {% for listapp in list %}
+	              	<tr>
+	                  <td>{{listapp.name}}</td>
+	                  <td>{{listapp.priority}}</td>
+	                  <td>{{listapp.status}}</td>
+	                  <td>{{listapp.health}}</td>
+	                  <td><a href="/appdetail/?id={{listapp.id}}&?action={{listapp.action}}">Details</a></td>
+	                </tr>
+    		  	  {% endfor %}
+	              </tbody>
+	            </table>
+	          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../static/js/jquery-1.12.3.min.js"></script>
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../static/dest/js/next.js"></script>
+
+    
+	
+</body></html>
